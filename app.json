@@ -1,0 +1,32 @@
+{
+  "name": "ESCANOR-lion-sin-of-pride",
+  "description": "WhatsApp Bot (Escanor the Lion Sin of Pride) deployable to Heroku.",
+  "repository": "https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride",
+  "logo": "https://files.catbox.moe/21cgiz.jpg",
+  "success_url": "/",
+  "env": {
+    "SESSION_ID": {
+      "description": "WhatsApp session ID string (paste from your session generator).",
+      "value": ""
+    },
+    "OWNER_NUMBER": {
+      "description": "Owner WhatsApp number in full international format, e.g. +254769279076",
+      "value": ""
+    },
+    "OWNER_NAME": {
+      "description": "Your display name for the bot owner.",
+      "value": "Escanor"
+    },
+    "BOT_NAME": {
+      "description": "The bot’s display name.",
+      "value": "Escanor - Lion Sin of Pride"
+    },
+    "PREF": {
+      "description": "Command prefix symbol (e.g. !, ., #)",
+      "value": "."
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo '🚀 Escanor bot deployed successfully!'"
+  }
+}
