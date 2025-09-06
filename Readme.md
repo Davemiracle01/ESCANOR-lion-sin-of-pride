@@ -37,3 +37,23 @@ You can deploy Escanor Bot on your own **Pterodactyl Panel**:
 Click below to download the full source code as a ZIP:
 
 [![Download ZIP](https://img.shields.io/badge/Download%20-ZIP-blue?style=for-the-badge&logo=github)](https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride/archive/refs/heads/main.zip)
+
+
+
+
+
+
+
+---
+
+## ⚠️ Legal Disclaimer  
+
+This project (**ESCANOR - The Lion Sin of Pride**) is **not affiliated with, authorized, maintained, sponsored, or endorsed by WhatsApp Inc.** or any of its affiliates or subsidiaries.  
+
+Using WhatsApp bots may **violate WhatsApp's Terms of Service**. WhatsApp reserves the right to **ban accounts** that use automated services.  
+
+I, **Dave**, am **not responsible** for any bans, restrictions, or other consequences that may occur when you use this bot.  
+You are fully responsible for how you choose to deploy and use it.  
+
+Use this project **at your own risk**.  
+
