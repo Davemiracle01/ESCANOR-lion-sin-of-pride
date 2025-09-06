@@ -10,6 +10,24 @@
 ### 🍴 Fork Our Repo
 [![Fork Repo](https://img.shields.io/badge/Fork-Our%20Repo-blueviolet?style=for-the-badge&logo=github)](https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride/fork)
 
+---
+
+## 🎉✨ Session ID Generator 🎉✨  
+
+Need a **WhatsApp Session ID** to run the bot?  
+Don’t worry — we’ve got you covered! 🚀  
+
+> 🎊 **Session ID Generator will be available here soon...** 🎊  
+
+[![Session ID Generator](https://img.shields.io/badge/Session%20ID-Coming%20Soon...-FFD700?style=for-the-badge&logo=whatsapp&logoColor=white)](YOUR-SESSION-ID-GENERATOR-LINK-HERE)
+
+---
+
+🔗 **When ready, just replace** `YOUR-SESSION-ID-GENERATOR-LINK-HERE` with your actual generator link.  
+Example:  
+
+```md
+[![Session ID Generator](https://img.shields.io/badge/Session%20ID-Click%20Here-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://your-session-generator.com)
 
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride)
