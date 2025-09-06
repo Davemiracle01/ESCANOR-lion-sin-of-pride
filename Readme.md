@@ -67,7 +67,6 @@ Generate your **WhatsApp Session ID** to run the bot:
 ![Dave’s GitHub stats](https://github-readme-stats.vercel.app/api?username=Davemiracle01&show_icons=true&theme=radical)  
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Davemiracle01&layout=compact&theme=radical)  
 
-![Snake animation](https://github.com/Davemiracle01/Davemiracle01/blob/output/github-contribution-grid-snake.svg)
 
 ---
 
