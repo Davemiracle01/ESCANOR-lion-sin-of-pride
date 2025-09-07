@@ -1,5 +1,5 @@
 {
-  "name": "June md",
+  "name": "ESCANOR BOT",
   "version": "1.2.5",
   "description": "WhatsApp Bot",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker:build": "docker build -t June md .",
-    "docker:run": "docker run -e SESSION_ID=$SESSION_ID June"
+    "docker:run": "docker run -e SESSION_ID=$SESSION_ID escanor"
   },
   "keywords": [
     "whatsapp-bot"
