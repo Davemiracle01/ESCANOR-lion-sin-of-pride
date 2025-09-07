@@ -5,13 +5,13 @@ async function pairCommand(sock, chatId, message, q) {
     try {
         if (!q) {
             return await sock.sendMessage(chatId, {
-                text: "Please provide valid WhatsApp number\nExample: .pair 25479857xxxx",
+                text: "Please provide valid WhatsApp number\nExample: .pair 254769279076",
                 contextInfo: {
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '@newsletter',
-                        newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                        newsletterName: 'escanor',
                         serverMessageId: -1
                     }
                 }
@@ -30,7 +30,7 @@ async function pairCommand(sock, chatId, message, q) {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '@newsletter',
-                        newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                        newsletterName: 'escanor',
                         serverMessageId: -1
                     }
                 }
@@ -49,7 +49,7 @@ async function pairCommand(sock, chatId, message, q) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '@newsletter',
-                            newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                            newsletterName: 'escanor',
                             serverMessageId: -1
                         }
                     }
@@ -63,7 +63,7 @@ async function pairCommand(sock, chatId, message, q) {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '@newsletter',
-                        newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ ',
+                        newsletterName: 'escanor ',
                         serverMessageId: -1
                     }
                 }
@@ -86,7 +86,7 @@ async function pairCommand(sock, chatId, message, q) {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '@newsletter',
-                                newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ ',
+                                newsletterName: 'escanor',
                                 serverMessageId: -1
                             }
                         }
@@ -107,7 +107,7 @@ async function pairCommand(sock, chatId, message, q) {
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
                             newsletterJid: '@newsletter',
-                            newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                            newsletterName: 'escanor',
                             serverMessageId: -1
                         }
                     }
@@ -123,7 +123,7 @@ async function pairCommand(sock, chatId, message, q) {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '@newsletter',
-                    newsletterName: '𝐉ᴜɴᴇ 𝐌ᴅ',
+                    newsletterName: 'escanor',
                     serverMessageId: -1
                 }
             }
