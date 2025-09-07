@@ -226,7 +226,7 @@ async function helpCommand(sock, chatId, message) {
                     mediaUrl: 'https://files.catbox.moe/r2emn1.mp4',
                     mediaType: 2,
                     renderLargerThumbnail: true,
-                    sourceUrl: 'https://github.com/your-bot-repo'
+                    sourceUrl: 'https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride'
                 }
             }
         }, { quoted: message });
