@@ -37,7 +37,7 @@ A blazing fast, feature-rich assistant to rule your chats like the Sun at noon.
 
 Generate your **WhatsApp Session ID** to run the bot:  
 
-> 🚧 **Coming Soon...** Stay tuned for the official generator release! 🚧  
+> 🚧 **kinda working idk...** ! 🚧  
 
 [![Session Generator](https://img.shields.io/badge/Session%20ID-Coming%20Soon-FFD700?style=for-the-badge&logo=whatsapp&logoColor=white)](https://session-beige.vercel.app/)
 
