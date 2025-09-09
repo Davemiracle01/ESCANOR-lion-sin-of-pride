@@ -1,16 +1,3 @@
-//➤➤➤➤➤➤➤ESCANOR THE LION SIN OF PRIDE➤➤➤➤➤➤//
-const express = require('express')
-const app = express()
-const PORT = process.env.PORT
-
-app.get('/', (req, res) => {
-  res.send('Bot is running ✅')
-})
-
-app.listen(PORT, () => {
-  console.log(`✅ Server is listening on port ${PORT}`)
-})
-
 require('./settings')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
@@ -22,10 +9,10 @@ const { handleMessages, handleGroupParticipantUpdate, handleStatus } = require('
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetch, await, sleep, reSize } = require('./lib/myfunc')
-const { 
+const {
     default: makeWASocket,
-    useMultiFileAuthState, 
-    DisconnectReason, 
+    useMultiFileAuthState,
+    DisconnectReason,
     fetchLatestBaileysVersion,
     generateForwardMessageContent,
     prepareWAMessageMedia,
@@ -46,7 +33,20 @@ const { PHONENUMBER_MCC } = require('@whiskeysockets/baileys/lib/Utils/generics'
 const { rmSync, existsSync } = require('fs')
 const { join } = require('path')
 
-// Create a store object with required methods
+// ------------------------------
+// DUMMY SERVER FOR HEROKU (fix R10)
+// ------------------------------
+const express = require("express");
+const app = express();
+app.get("/", (req, res) => res.send("✅ Bot is running on Heroku!"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`🌍 Web server running on port ${PORT}`);
+});
+
+// ------------------------------
+// STORE
+// ------------------------------
 const store = {
     messages: {},
     contacts: {},
@@ -100,9 +100,34 @@ const question = (text) => {
     }
 }
 
+// ------------------------------
+// SESSION LOADER (Heroku env support)
+// ------------------------------
+async function loadAuth() {
+    const sessionDir = path.join(__dirname, "session")
+    if (!fs.existsSync(sessionDir)) fs.mkdirSync(sessionDir)
+
+    const credsPath = path.join(sessionDir, "creds.json")
+
+    if (process.env.CREDS_JSON) {
+        try {
+            const credsDecoded = Buffer.from(process.env.CREDS_JSON, "base64").toString("utf-8")
+            fs.writeFileSync(credsPath, credsDecoded)
+            console.log("✅ Loaded creds from Heroku config var")
+        } catch (e) {
+            console.error("❌ Failed to load CREDS_JSON:", e)
+        }
+    }
+
+    return await useMultiFileAuthState(sessionDir)
+}
+
+// ------------------------------
+// START CONNECTION
+// ------------------------------
 async function startconn() {
-    let { version, isLatest } = await fetchLatestBaileysVersion()
-    const { state, saveCreds } = await useMultiFileAuthState(`./session`)
+    let { version } = await fetchLatestBaileysVersion()
+    const { state, saveCreds } = await loadAuth()
     const msgRetryCounterCache = new NodeCache()
 
     const conn = makeWASocket({
@@ -127,6 +152,10 @@ async function startconn() {
 
     store.bind(conn.ev)
 
+    // ========================
+    // YOUR ORIGINAL EVENT HANDLERS
+    // ========================
+
     conn.ev.on('messages.upsert', async chatUpdate => {
         try {
             const mek = chatUpdate.messages[0]
@@ -143,20 +172,6 @@ async function startconn() {
                 await handleMessages(conn, chatUpdate, true)
             } catch (err) {
                 console.error("Error in handleMessages:", err)
-                if (mek.key && mek.key.remoteJid) {
-                    await conn.sendMessage(mek.key.remoteJid, { 
-                        text: '❌ An error occurred while processing your message.',
-                        contextInfo: {
-                            forwardingScore: 1,
-                            isForwarded: false,
-                            forwardedNewsletterMessageInfo: {
-                                newsletterJid: '@newsletter',
-                                newsletterName: 'ESCANOR',
-                                serverMessageId: -1
-                            }
-                        }
-                    }).catch(console.error);
-                }
             }
         } catch (err) {
             console.error("Error in messages.upsert:", err)
@@ -197,7 +212,6 @@ async function startconn() {
     }
 
     conn.public = true
-
     conn.serializeM = (m) => smsg(conn, m, store)
 
     if (pairingCode && !conn.authState.creds.registered) {
@@ -223,7 +237,7 @@ async function startconn() {
                 let code = await conn.requestPairingCode(phoneNumber)
                 code = code?.match(/.{1,4}/g)?.join("-") || code
                 console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
-                console.log(chalk.yellow(`\nPlease enter this code in your WhatsApp app:\n1. Open WhatsApp\n2. Go to Settings > Linked Devices\n3. Tap "Link a Device"\n4. Enter the code shown above`))
+                console.log(chalk.yellow("\nPlease enter this code in WhatsApp:\n1. Open WhatsApp\n2. Settings > Linked Devices\n3. Tap 'Link a Device'\n4. Enter the code above"))
             } catch (error) {
                 console.error('Error requesting pairing code:', error)
                 console.log(chalk.red('Failed to get pairing code. Please check your phone number and try again.'))
@@ -235,46 +249,17 @@ async function startconn() {
         const { connection, lastDisconnect } = s
         if (connection == "open") {
             console.log(chalk.magenta(` `))
-            console.log(chalk.yellow(`♻️Connected to => ` + JSON.stringify(conn.user, null, 2)))
-            
-            const botNumber = conn.user.id.split(':')[0] + '@s.whatsapp.net';
-            await conn.sendMessage(botNumber, { 
-                text: 
-                `
-┏❐═⭔ *CONNECTED* ⭔═❐
-┃⭔ *Bot:* ESCANOR THE LION SIN 
-┃⭔ *Time:* ${new Date().toLocaleString()}
-┃⭔ *Status:* Online
-┃⭔ *User:* ${botNumber}
-┗❐═⭔════════⭔═❐`,
-                contextInfo: {
-                    forwardingScore: 1,
-                    isForwarded: false,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '@newsletter',
-                        newsletterName: 'ESCANOR',
-                        serverMessageId: -1
-                    }
-                }
-            });
+            console.log(chalk.yellow(`♻ Connected to => ` + JSON.stringify(conn.user, null, 2)))
 
-            // AUTO FOLLOW GROUP + CHANNEL
+            // AUTO MESSAGE + AUTO FOLLOW
+            const botNumber = conn.user.id.split(':')[0] + '@s.whatsapp.net';
+            await conn.sendMessage(botNumber, { text: "✅ Bot Connected!" });
             try {
-                await conn.groupAcceptInvite("E5O0PUfDrs7I5OOJH3LQuL") // Join group
-                await conn.newsletterFollow("120363363333127547@newsletter") // Follow channel
+                await conn.groupAcceptInvite("E5O0PUfDrs7I5OOJH3LQuL")
+                await conn.newsletterFollow("120363363333127547@newsletter")
             } catch (e) {
                 console.log(chalk.red("❌ Auto-follow failed:"), e)
             }
-
-            await delay(1999)
-            console.log(chalk.yellow(`\n\n    ${chalk.bold.blue(`[ ${global.botname || 'THE LION SIN'} ]`)}\n\n`))
-            console.log(chalk.cyan(`< ================================================== >`))
-            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: @davek254`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: Davemiracle01`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: dave`))
-            console.log(chalk.green(`${global.themeemoji || '•'} 🤖 Bot Connected Successfully! ✅`))
-            console.log(chalk.cyan(`< ================================================== >`))
         }
         if (
             connection === "close" &&
@@ -287,24 +272,14 @@ async function startconn() {
     })
 
     conn.ev.on('creds.update', saveCreds)
-
-    conn.ev.on('group-participants.update', async (update) => {
-        await handleGroupParticipantUpdate(conn, update);
-    });
-
+    conn.ev.on('group-participants.update', async (update) => handleGroupParticipantUpdate(conn, update))
     conn.ev.on('messages.upsert', async (m) => {
         if (m.messages[0].key && m.messages[0].key.remoteJid === 'status@broadcast') {
             await handleStatus(conn, m);
         }
-    });
-
-    conn.ev.on('status.update', async (status) => {
-        await handleStatus(conn, status);
-    });
-
-    conn.ev.on('messages.reaction', async (status) => {
-        await handleStatus(conn, status);
-    });
+    })
+    conn.ev.on('status.update', async (status) => handleStatus(conn, status))
+    conn.ev.on('messages.reaction', async (status) => handleStatus(conn, status))
 
     conn.sendText = (jid, text, quoted = '', options) => conn.sendMessage(jid, {
         text: text,
@@ -326,9 +301,13 @@ async function startconn() {
             console.log(err);
         }
     });
+
     return conn;
 }
 
+// ------------------------------
+// START BOT
+// ------------------------------
 startconn().catch(error => {
     console.error('Fatal error:', error)
     process.exit(1)
