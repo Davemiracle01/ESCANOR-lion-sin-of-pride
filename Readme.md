@@ -39,7 +39,7 @@ Generate your **WhatsApp Session ID** to run the bot:
 
 > 🚧 **Coming Soon...** Stay tuned for the official generator release! 🚧  
 
-[![Session Generator](https://img.shields.io/badge/Session%20ID-Coming%20Soon-FFD700?style=for-the-badge&logo=whatsapp&logoColor=white)](YOUR-SESSION-ID-GENERATOR-LINK-HERE)
+[![Session Generator](https://img.shields.io/badge/Session%20ID-Coming%20Soon-FFD700?style=for-the-badge&logo=whatsapp&logoColor=white)](https://session-beige.vercel.app/)
 
 ---
 
