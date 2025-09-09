@@ -21,7 +21,7 @@ function formatTime(seconds) {
 async function pingCommand(sock, chatId, message) {
     try {
         const start = Date.now();
-        await sock.sendMessage(chatId, { text: ' *𝙹𝚄𝙽𝙴 𝙼𝙳 𝙱𝙾𝚃* ' }, { quoted: message });
+        await sock.sendMessage(chatId, { text: ' *who dares question my being* ' }, { quoted: message });
         const end = Date.now();
         const ping = Math.round((end - start) / 2);
 
