@@ -1,0 +1,52 @@
+{
+  "name": "ESCANOR Bot",
+  "description": "Escanor — The Lion Sin of Pride WhatsApp Multi-Device Bot",
+  "repository": "https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride",
+  "logo": "https://files.catbox.moe/0r0xfv.jpeg",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "baileys",
+    "session",
+    "multi-device",
+    "escanor",
+    "lion",
+    "pride"
+  ],
+  "env": {
+    "SESSION_ID": {
+      "description": "Your WhatsApp session string (base64 creds.json). Paste it here.",
+      "required": true
+    },
+    "BOT_OWNER": {
+      "description": "WhatsApp number of the bot owner",
+      "value": "+254769279076"
+    },
+    "PREFIX": {
+      "description": "Command prefix for the bot (e.g. . or !)",
+      "value": "."
+    },
+    "VERSION": {
+      "description": "Version string of Escanor bot",
+      "value": "1.0.0"
+    },
+    "PASTEBIN_API_KEY": {
+      "description": "Pastebin API key (optional, used for session storage/sharing)",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "scripts": {
+    "postdeploy": "echo \"🔥 ESCANOR Bot deployed successfully! Use your SESSION_ID to connect.\""
+  }
+}
