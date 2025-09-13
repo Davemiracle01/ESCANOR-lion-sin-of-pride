@@ -15,7 +15,7 @@
   ],
   "env": {
     "SESSION_ID": {
-      "description": "Your WhatsApp session string (base64 creds.json). Paste it here.",
+      "description": "Your WhatsApp session.Paste it here.",
       "required": true
     },
     "BOT_OWNER": {
@@ -29,12 +29,7 @@
     "VERSION": {
       "description": "Version string of Escanor bot",
       "value": "1.0.0"
-    },
-    "PASTEBIN_API_KEY": {
-      "description": "Pastebin API key (optional, used for session storage/sharing)",
-      "required": false
     }
-  },
   "buildpacks": [
     {
       "url": "heroku/nodejs"
