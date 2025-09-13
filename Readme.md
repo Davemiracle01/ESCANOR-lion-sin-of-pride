@@ -1,5 +1,13 @@
 <div align="center">
 
+# 🚧🚧🚧  
+# 🛠️ **UNDER CONSTRUCTION** 🛠️  
+# 🚧🚧🚧  
+
+![Under Construction](https://media.giphy.com/media/3o6MbfalCikUdcKfUo/giphy.gif)
+
+---
+
 # 🦁 ESCANOR - The Lion Sin of Pride
 
 ⚡ WhatsApp Multi-Device Bot built with **Pride, Power, and Perfection.**  
@@ -67,7 +75,6 @@ Generate your **WhatsApp Session ID** to run the bot:
 ![Dave’s GitHub stats](https://github-readme-stats.vercel.app/api?username=Davemiracle01&show_icons=true&theme=radical)  
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Davemiracle01&layout=compact&theme=radical)  
 
-
 ---
 
 ## ⚠️ Disclaimer  
@@ -81,4 +88,3 @@ The developer (**Dave**) is **not responsible** for any misuse, bans, or issues.
 **Use at your own risk.**
 
 </div>
-
