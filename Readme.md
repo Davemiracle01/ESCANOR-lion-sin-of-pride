@@ -10,27 +10,6 @@
 
 # 🦁 ESCANOR - The Lion Sin of Pride
 
-⚡ WhatsApp Multi-Device Bot built with **Pride, Power, and Perfection.**  
-A blazing fast, feature-rich assistant to rule your chats like the Sun at noon.  
-
-![Escanor Banner](https://files.catbox.moe/0r0xfv.jpeg)
-
----
-
-## 🌍 Community & Support
-
-[![Follow on WhatsApp Channel](https://img.shields.io/badge/Follow-WhatsApp%20Channel-25D366?style=for-the-badge&logo=whatsapp)](https://whatsapp.com/channel/0029VavpWUvGk1Fkbzz0vz0v)  
-[![Chat +254769279076](https://img.shields.io/badge/Chat-%2B254769279076-25D366?style=for-the-badge&logo=whatsapp)](https://wa.me/254769279076)  
-[![Chat +254799073744](https://img.shields.io/badge/Chat-%2B254799073744-25D366?style=for-the-badge&logo=whatsapp)](https://wa.me/254799073744)
-
----
-
-## 📊 GitHub Insights  
-
-![Stars](https://img.shields.io/github/stars/Davemiracle01/ESCANOR-lion-sin-of-pride?style=for-the-badge&color=gold)  
-![Forks](https://img.shields.io/github/forks/Davemiracle01/ESCANOR-lion-sin-of-pride?style=for-the-badge&color=blueviolet)  
-![Issues](https://img.shields.io/github/issues/Davemiracle01/ESCANOR-lion-sin-of-pride?style=for-the-badge&color=red)  
-![License](https://img.shields.io/github/license/Davemiracle01/ESCANOR-lion-sin-of-pride?style=for-the-badge&color=green)  
 ![Visitors](https://komarev.com/ghpvc/?username=Davemiracle01&label=Profile%20Views&color=0e75b6&style=for-the-badge)
 
 ---
@@ -73,9 +52,7 @@ Generate your **WhatsApp Session ID** to run the bot:
 ## 📈 Developer Stats  
 
 ![Dave’s GitHub stats](https://github-readme-stats.vercel.app/api?username=Davemiracle01&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Davemiracle01&layout=compact&theme=radical)  
-
----
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Davemiracle01&=compa
 
 ## ⚠️ Disclaimer  
 
