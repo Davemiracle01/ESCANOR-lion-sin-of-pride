@@ -1,3 +1,9 @@
+### 🔑 Get Your SESSION_ID
+Use the **Backup Session ID Generator** by **Malvin King**:  
+👉 [Generate SESSION_ID](https://starcore-pairing.onrender.com/pair)  
+
+
+
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Davemiracle01/ESCANOR-lion-sin-of-pride)
 
 
