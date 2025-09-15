@@ -1,5 +1,5 @@
 # 🔑 Get Your SESSION_ID
-Generate your **Backup Session ID** using the tool by **Malvin King**  
+Generate your **Session ID** by **Malvin King**  
 
 [![Get SESSION_ID](https://img.shields.io/badge/Generate%20Session-green?style=for-the-badge&logo=whatsapp)](https://starcore-pairing.onrender.com/pair)
 
